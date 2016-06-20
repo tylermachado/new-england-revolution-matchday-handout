@@ -1,4 +1,4 @@
-var	width = 600,
+var	width = 730,
 	n = crew.length,
 	height = width,
 	square = width/n,
@@ -19,18 +19,21 @@ function createDots(data) {
 	
     var dots = svg.selectAll("rect")
 			.data(data)
-			.enter().append("circle")
+			.enter().append("g").selectAll("circle")
+  .data(function(d) { return d3.range(d); })
+  .enter()
+  .append("circle")
 			.attr("data-goals", function(d) {return d;})
 			.attr("r", radius)
-			.attr("cx", function(d, i) { return (i % n) * (square+squarepadding) + radius } )
-			.attr("cy", function(d, i) { 
+			.attr("cx", function(d, i, j) { return (j % n) * (square+squarepadding) + radius } )
+			.attr("cy", function(d, i, j) { 
 				if (data == revs) {
 					return (height/2) - (radius) - (radius*2*d); 
 				} else {
 					return (height/2) + (radius) + (radius*2*d); 
 				}
 			 } )
-			.style("fill", function(d, i) { 
+			.style("fill", function(d, i, j) { 
 				if (data == revs) {
 					return "#0A2141"; 
 				} else {
