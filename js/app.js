@@ -1,35 +1,33 @@
-
-
 var	width = 600,
 	n = crew.length,
-	height = width/2,
+	height = width,
 	square = width/n,
-	squarepadding = 0;
+	squarepadding = 0,
+	radius = 5;
 
 var color = d3.scale.linear()
   .domain([-10, 0, 10])
   .range(["#ca0020","#f7f7f7","#0571b0"]);
 
-
-function createBars(data) {
-	console.log(data);
-	var svg = d3.select("body").append("svg")
+  var svg = d3.select("body").append("svg")
 		.attr("width", width)
 		.attr("height", height);
 
-    var squares = svg.selectAll("rect")
+
+function createDots(data) {
+	console.log(data);
+	
+    var dots = svg.selectAll("rect")
 			.data(data)
-			.enter().append("rect")
-			.attr("width",square)
-			.attr("height",function(d,i) { 
-					return d*square * 2;
-			} )
-			.attr("x", function(d, i) { return (i % n) * (square+squarepadding) } )
-			.attr("y", function(d, i) { 
+			.enter().append("circle")
+			.attr("data-goals", function(d) {return d;})
+			.attr("r", radius)
+			.attr("cx", function(d, i) { return (i % n) * (square+squarepadding) + radius } )
+			.attr("cy", function(d, i) { 
 				if (data == revs) {
-					return height-d*square*2 - 50; 
+					return (height/2) - (radius) - (radius*2*d); 
 				} else {
-					return 50; 
+					return (height/2) + (radius) + (radius*2*d); 
 				}
 			 } )
 			.style("fill", function(d, i) { 
@@ -41,5 +39,5 @@ function createBars(data) {
 			} );
 }
 
-createBars(revs);
-createBars(crew);
+createDots(revs);
+createDots(crew);
