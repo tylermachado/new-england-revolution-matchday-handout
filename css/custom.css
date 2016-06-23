@@ -16,6 +16,19 @@ body, html {
 	text-align:center;
 }
 
+svg text {
+  font-family: 'Yanone Kaffeesatz', monospace;
+  fill:#0A2141;
+}
+
+.clubname {
+  font-size:160px;
+}
+
+.date {
+  font-size:30px;
+}
+
 svg {
 	background-color:#90C3D4;
 }
