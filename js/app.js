@@ -22,41 +22,41 @@ var svg = d3.select("body").append("svg")
 		.attr("height", height);
 
 
-// var textRevs = svg.append("text")
-// 		.text("REVS")
-// 		.attr({
-// 			"text-anchor":"middle",
-// 			x: width/2,
-// 			y: width/2,
-// 			class: "clubname"
-// 		});
+var textRevs = svg.append("text")
+		.text("REVS")
+		.attr({
+			"text-anchor":"middle",
+			x: width/2,
+			y: width/2,
+			class: "clubname"
+		});
 
-// var textCrew = svg.append("text")
-// 		.text("CREW")
-// 		.attr({
-// 			"text-anchor":"middle",
-// 			x: width/2,
-// 			y: width/2 + 120,
-// 			class: "clubname"
-// 		});
+var textCrew = svg.append("text")
+		.text("CREW")
+		.attr({
+			"text-anchor":"middle",
+			x: width/2,
+			y: width/2 + 120,
+			class: "clubname"
+		});
 
-// var textTop = svg.append("text")
-// 		.text("JULY 26, 2016")
-// 		.attr({
-// 			"text-anchor":"middle",
-// 			x: width/2,
-// 			y: 30,
-// 			class: "date"
-// 		});
+var textTop = svg.append("text")
+		.text("JULY 26, 2016")
+		.attr({
+			"text-anchor":"middle",
+			x: width/2,
+			y: 30,
+			class: "date"
+		});
 
-// var textBottom = svg.append("text")
-// 		.text("GILLETTE STADIUM, FOXBORO, MA")
-// 		.attr({
-// 			"text-anchor":"middle",
-// 			x: width/2,
-// 			y: width-5,
-// 			class: "date"
-// 		});
+var textBottom = svg.append("text")
+		.text("GILLETTE STADIUM, FOXBORO, MA")
+		.attr({
+			"text-anchor":"middle",
+			x: width/2,
+			y: width-5,
+			class: "date"
+		});
 
 
 

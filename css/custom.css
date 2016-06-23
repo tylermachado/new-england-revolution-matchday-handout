@@ -17,7 +17,8 @@ body, html {
 }
 
 svg text {
-  font-family: 'Yanone Kaffeesatz', monospace;
+  font-family: 'Source Sans Pro', monospace;
+  font-weight:600;
   fill:#0A2141;
 }
 
